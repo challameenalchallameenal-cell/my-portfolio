@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Studies | Vasantha Kumar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .study-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .education-block {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+        .edu-photo {
+            width: 200px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .edu-text h2 { color: #38bdf8; margin-top: 0; }
+        .python-badge {
+            background: #4ade80;
+            color: #0f172a;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .education-block { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="study-container">
+        <a href="index.html" class="nav-item" style="display:block; margin-bottom:20px;">← Back to Home</a>
+        <h1>My Educational Journey</h1>
+
+        <div class="education-block">
+            <img src="C:\Users\vasas\Downloads\OIP (1).webp" alt="Nehru Vidhya Sallai" class="edu-photo">
+            <div class="edu-text">
+                <h2>Schooling</h2>
+                <p>I completed my secondary education at <strong>Nehru Vidhya Sallai School</strong>.</p>
+            </div>
+        </div>
+
+        <div class="education-block">
+            <img src="C:\Users\vasas\Downloads\OIP.webp" alt="NMSSVN College" class="edu-photo">
+            <div class="edu-text">
+                <h2>College</h2>
+                <p>I am currently studying Information Technology at <strong>N.M.S.S.V.N College</strong>.</p>
+                <div class="python-badge">Currently Learning: Python 🐍</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
