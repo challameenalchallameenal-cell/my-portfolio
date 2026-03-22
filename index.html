@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasantha Kumar | Portfolio</title>
@@ -59,7 +60,7 @@
    <div class="gallery-item" id="title card">
                 <img src="profile.jpg" alt="Vasantha Kumar" class="gallery-item" style="width:100%;" height="100%">
             </div>
-            
+    <audio id="victory-sound" src="victory.mp3"></audio>
             <div> <h1>Information Technology Student </h1>
             <h1>Vasantha Kumar</h1>
             <p >19-year-old developer specializing in Python and UI/UX Design.</p></div>
@@ -76,37 +77,49 @@
     <a href="hobby.html" class="nav-item">Hobby</a>
 </div>
     <script src="script.js"></script>
-<script>
+                <script>
     const learnBtn = document.getElementById('learn-btn');
     const navMenu = document.querySelector('.nav-menu');
+    const victorySound = document.getElementById('victory-sound');
     let moveCount = 0;
     const maxMoves = 5;
 
     learnBtn.addEventListener('mouseover', () => {
         if (moveCount < maxMoves) {
+            // Move the button randomly
             const maxX = window.innerWidth - learnBtn.offsetWidth - 100;
             const maxY = window.innerHeight - learnBtn.offsetHeight - 100;
-            
             learnBtn.style.left = Math.random() * maxX + 'px';
             learnBtn.style.top = Math.random() * maxY + 'px';
             
             moveCount++;
-            learnBtn.innerText = "Catch me!";
+            learnBtn.innerText = "Catch me! 🏃‍♂️";
         } else {
-            learnBtn.innerText = "You Win! Click Me";
-            learnBtn.style.background = "#ffd700"; // Turns gold when catchable
+            learnBtn.innerText = "Claim Your Reward! 👑";
+            learnBtn.style.background = "linear-gradient(45deg, #ffd700, #b8860b)";
+            learnBtn.style.boxShadow = "0 0 40px #ffd700";
         }
     });
 
-    // The Secret Reveal Logic
     learnBtn.addEventListener('click', (e) => {
         if (moveCount >= maxMoves) {
-            e.preventDefault(); // Stop it from leaving the page
+            e.preventDefault();
             
-            // Hide the runaway button
+            // 1. Play Sound
+            victorySound.play();
+
+            // 2. Fire Confetti
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ffd700', '#ffffff', '#38bdf8']
+            });
+
+            // 3. Hide the game button
             learnBtn.style.display = 'none';
-            
-            // Reveal the Royal Menu
+
+            // 4. Reveal Royal Menu
             navMenu.classList.add('reveal-active');
         }
     });
