@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hobbies | Sketches</title>
+    <link rel="stylesheet" href="style.css">
+   <style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50x;
+        padding: 40px;
+        /* This creates the 3D space for the flip */
+        perspective: 1000px; 
+    }
+
+    .gallery-item {
+        position: relative;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        
+        /* Smooth timing for the effect */
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                    box-shadow 0.6s ease;
+        
+        /* Sets the pivot point to the top so it "flaps" downward */
+        transform-origin: top; 
+        cursor: pointer;
+    }
+
+    /* The "Flap and Go Down" Effect */
+    .gallery-item:hover {
+        /* rotateX tilts it down, translateY moves it slightly lower */
+        transform: rotateX(-25deg) translateY(15px); 
+        box-shadow: 0 25px 50px rgba(56, 189, 248, 0.4);
+        z-index: 10;
+    }
+
+    .gallery-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: filter 0.6s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+        filter: brightness(1.1);
+    }
+    lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+/* The Zoomed Image */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: rgb(156, 19, 19);
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  .design-section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #000514; /* Your dark background */
+  }
+
+  /* Styling for both Header and Paragraph */
+  h1, p {
+    color: #ffffff; /* Royal Red */
+    font-family:  Arial, Helvetica, sans-serif; /* Handwritten font */
+    margin: 4; /* Clears default spacing */
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px; /* Space between 'drawing' and the text */
+    font-weight: bold;
+    font-family:serif;
+    color: burlywood;
+  }
+
+  p {
+    font-size: 1.5rem;
+    max-width: 500px; /* Keeps the text from stretching too far */
+    line-height: 1.4;
+    color: antiquewhite;
+  }
+
+   
+</style>
+
+<div class="gallery">
+    <div> 
+        <h1>DRAWING:</h1>
+        <p> i really love drawing that's why iam choose designing. 
+        every time i finished one and that time i fell's i won the world
+        and one other reason is i can build what iam think  on my mind with only a paper and pencil   
+     </p></div>
+   <div class="gallery-item">
+        <img src="C:\Users\vasas\Downloads\drawing1.jpg" alt="iam good drawing artist so that why iam choose designer " class="gallery-img">
+    </div>
+</div>
+<div class="gallery">
+  <div><h1>work out:</h1>
+   <p>  i don't have that much body health but i really give a important for my body health so i do my daliy work out on my home some other reason are i really want body like  that  ➡️</p>
+   </div>
+   <div class="gallery-item">
+   <img src="C:\Users\vasas\Downloads\1515265.jpg" class="gallery-img" style="width: 100%;" height="50%">
+</div>
+</div>
+    <div class="gallery">
+        <div><h1>
+            editing:
+        </h1>
+        <p>
+     my main work and most of the time i want that work it's named editing most of the time iam only editing  a anime based and some time i do some college  project type i know it's to hard to do but once you done Your felling must be good at all
+        </p>
+        </div>
+        <div class="gallery-item">
+        <img src="C:\Users\vasas\Downloads\vas.jpg" class="gallery-item" style="width: 100%;" height="100%">
+    </div>
+    </div>
+ </div>
+ </div>
+  <div class="nav-item">
+          <a href="index.html" class="  content-section" >BACK TO  HOME 😁😁😁😁😁</a>
+    </div>
+</body>
+</html>
