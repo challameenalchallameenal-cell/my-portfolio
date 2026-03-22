@@ -80,13 +80,28 @@ body {
 }
 
 .nav-item {
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.9rem;
+    /* The Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); /* This blurs everything behind the button */
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 215, 0, 0.4); /* Subtle Gold Border */
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.nav-item:hover { color: var(--accent); }
-
+.nav-item:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid #ffd700;
+    transform: translateY(-5px); /* Button pops up slightly on hover */
+    box-shadow: 0 12px 40px 0 rgba(255, 215, 0, 0.4);
+}
 .content-section {
     margin-top: 100px;
     width: 100%;
@@ -226,4 +241,23 @@ h1{
     display: flex !important;
     justify-content: center;
     animation: royalEntrance 0.8s forwards;
+}
+/* Hide the default mouse */
+body { cursor: none; }
+
+#cursor-dot, #cursor-outline {
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none; /* Let clicks pass through to buttons */
+    z-index: 10000;
+    transition: transform 0.1s ease-out;
+}
+
+#cursor-dot { width: 8px; height: 8px; background-color: #ffd700; }
+#cursor-outline {
+    width: 40px; height: 40px;
+    border: 2px solid #ffd700;
+    transition: all 0.2s ease-out;
 }
